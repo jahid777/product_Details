@@ -79,7 +79,7 @@ export const fakeData = [
 
 const Product = () => {
   const [datas, setDatas] = useState(fakeData);
-  const [electedCategori, setSelectedCategori] = useContext(SelectedCat);
+  const [selectedCategori, setSelectedCategori] = useContext(SelectedCat);
 
   const handleCat = (categoris) => {
     setSelectedCategori(categoris);
@@ -95,10 +95,10 @@ const Product = () => {
         >
           <div className="card m-5" style={{ border: "1px solid black" }}>
             <div className="card-body">
-              <h5 className="card-title">id: {data.id}</h5>
-              <p className="card-text">name: {data.name}</p>
+              <h5 className="card-title">id: {data?.id}</h5>
+              <p className="card-text">name: {data?.name}</p>
             </div>
-            <h1 style={{ color: "red" }}>tk: {data.taka}</h1>
+            <h1 style={{ color: "red" }}>tk: {data?.taka}</h1>
           </div>
         </Link>
       ))}

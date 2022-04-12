@@ -8,7 +8,7 @@ import ProductDetails from "./Components/ProudctDetails/ProductDetails";
 export const SelectedCat = createContext();
 
 function App() {
-  const [electedCategori, setSelectedCategori] = useState("");
+  const [electedCategori, setSelectedCategori] = useState([]);
   return (
     <SelectedCat.Provider value={[electedCategori, setSelectedCategori]}>
       <Router>

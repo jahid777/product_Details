@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { fakeData } from "./../Product/Product";
 import { SelectedCat } from "./../../App";
@@ -17,6 +17,26 @@ const ProductDetails = () => {
     (data) => data.id === parseInt(singleProductId)
   );
 
+  // const getLocalStorageCartData = () => {
+  //   let cartData;
+
+  //   const localData = JSON.parse(localStorage.getItem("product")) || [];
+  //   cartData = localData;
+
+  //   return cartData;
+  // };
+
+  // const [localStroge, setLocalStroge] = useState(getLocalStorageCartData());
+
+  // //seeting the data
+  // useEffect(() => {
+  //   localStorage.setItem("product", JSON.stringify(selectedCategori || []));
+  // }, []);
+
+  // useEffect(() => {
+  //   setSelectedCategori(localStroge);
+  // }, [productDetl]);
+
   return (
     <div>
       <div className="row">
@@ -31,24 +51,6 @@ const ProductDetails = () => {
           </h2>
         </div>
         <div className="col-md-6">
-          {/* <div className="card-group">
-            {fakeData.map((data) => (
-              <Link key={data.id} to={"/singleProduct/" + data?.id}>
-                <div
-                  className="card m-5"
-                  style={{ border: "1px solid black" }}
-                  // onClick={() => singleProduct(data)}
-                >
-                  <div className="card-body">
-                    <h5 className="card-title">{data.id}</h5>
-                    <p className="card-text">{data.name}</p>
-                  </div>
-                  <h1 style={{ color: "red" }}>tk {data.taka}</h1>
-                </div>
-              </Link>
-            ))}
-          </div> */}
-
           <div className="card-group">
             {clickedCat.map((data) => (
               <Link key={data.id} to={"/singleProduct/" + data?.id}>
